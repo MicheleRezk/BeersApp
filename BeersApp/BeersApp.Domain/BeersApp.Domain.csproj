@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beer.cs" />
+    <Compile Include="BreweryDBSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponseWrapper.cs" />
   </ItemGroup>
