@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeersApp.Web", "BeersApp.Web\BeersApp.Web.csproj", "{0F67C839-0490-4815-B80C-C3056F79C9A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeersApp.Web", "BeersApp.Web\BeersApp.Web.csproj", "{0F67C839-0490-4815-B80C-C3056F79C9A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeersApp.Domain", "BeersApp.Domain\BeersApp.Domain.csproj", "{2EC74DAA-0ADB-4DB9-9157-64338945BD58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeersApp.Domain", "BeersApp.Domain\BeersApp.Domain.csproj", "{C94B1D29-FE06-4137-923B-0B10510E5BBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeersApp.Application", "BeersApp.Application\BeersApp.Application.csproj", "{8E8E2E05-10FD-4804-9247-5F015A2829E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeersApp.Application", "BeersApp.Application\BeersApp.Application.csproj", "{BB9DBC71-8DAE-46DC-ACD7-1782B075C661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeersApp.Application.Tests", "BeersApp.Application.Tests\BeersApp.Application.Tests.csproj", "{A09C248E-491C-4AB4-8EC6-6F9A2AD88411}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeersApp.Application.Tests", "BeersApp.Application.Tests\BeersApp.Application.Tests.csproj", "{1E4B814A-8193-4422-997F-148F34DF11C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{0F67C839-0490-4815-B80C-C3056F79C9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F67C839-0490-4815-B80C-C3056F79C9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F67C839-0490-4815-B80C-C3056F79C9A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2EC74DAA-0ADB-4DB9-9157-64338945BD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2EC74DAA-0ADB-4DB9-9157-64338945BD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2EC74DAA-0ADB-4DB9-9157-64338945BD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2EC74DAA-0ADB-4DB9-9157-64338945BD58}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E8E2E05-10FD-4804-9247-5F015A2829E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E8E2E05-10FD-4804-9247-5F015A2829E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E8E2E05-10FD-4804-9247-5F015A2829E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E8E2E05-10FD-4804-9247-5F015A2829E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A09C248E-491C-4AB4-8EC6-6F9A2AD88411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A09C248E-491C-4AB4-8EC6-6F9A2AD88411}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A09C248E-491C-4AB4-8EC6-6F9A2AD88411}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A09C248E-491C-4AB4-8EC6-6F9A2AD88411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94B1D29-FE06-4137-923B-0B10510E5BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94B1D29-FE06-4137-923B-0B10510E5BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94B1D29-FE06-4137-923B-0B10510E5BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94B1D29-FE06-4137-923B-0B10510E5BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9DBC71-8DAE-46DC-ACD7-1782B075C661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9DBC71-8DAE-46DC-ACD7-1782B075C661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9DBC71-8DAE-46DC-ACD7-1782B075C661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9DBC71-8DAE-46DC-ACD7-1782B075C661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E4B814A-8193-4422-997F-148F34DF11C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E4B814A-8193-4422-997F-148F34DF11C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E4B814A-8193-4422-997F-148F34DF11C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E4B814A-8193-4422-997F-148F34DF11C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
