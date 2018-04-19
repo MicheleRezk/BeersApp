@@ -25,7 +25,7 @@ namespace BeersApp.Web.Controllers
 
         #region HTTP GET
 
-        // GET: /api/beers/details-by-id?beerId=eqcXWb
+        // GET: /api/beers/details-by-id?beerId=oz1oll
         [HttpGet("details-by-id")]
         public async Task<Beer> GetDetailsById([FromQuery] string beerId)
         {
