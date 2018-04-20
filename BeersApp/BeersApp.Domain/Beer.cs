@@ -21,7 +21,7 @@ namespace BeersApp.Domain
                 {
                     return Labels.Large;
                 }
-                return "";
+                return "/assets/images/beer-dummy.jpg";
             }
         }
         #endregion
