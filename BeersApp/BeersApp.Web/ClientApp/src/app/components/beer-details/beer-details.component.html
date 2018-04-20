@@ -1,0 +1,15 @@
+<div class="beer-details-container" *ngIf='!isLoading && beer'>
+  <div class="beer-image">
+    <img [src]='beer.displayImage'
+         [title]='beer.nameDisplay'>
+  </div>
+  <div>
+    <h2>{{beer.nameDisplay}}</h2>
+  </div>
+  <div>
+    {{beer.description}}
+  </div>
+
+</div>
+
+

@@ -27,10 +27,10 @@ namespace BeersApp.Web.Controllers
 
         // GET: /api/beers/details-by-id?beerId=oz1oll
         [HttpGet("details-by-id")]
-        public async Task<Beer> GetDetailsById([FromQuery] string beerId)
+        public async Task<ResponseWrapper<Beer>> GetDetailsById([FromQuery] string beerId)
         {
             var response = await _BeerServices.GetDetailsByID(beerId);
-            return response.Data;
+            return response;
         }
 
         // GET: /api/beers/list

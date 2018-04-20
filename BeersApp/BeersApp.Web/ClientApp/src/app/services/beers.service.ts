@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
@@ -8,6 +8,7 @@ import 'rxjs/add/operator/do';
 
 import { Config } from './config.service';
 import { BeerListResponseWrapper } from '../models/beer-list-response-wrapper.model';
+import { BeerDetailsResponseWrapper } from '../models/beer-details-response-wrapper.model';
 
 @Injectable()
 export class BeerService {
@@ -16,6 +17,16 @@ export class BeerService {
 
   getBeers(): Observable<BeerListResponseWrapper> {
     return this._http.get<BeerListResponseWrapper>(this._config.BACKEND.BEERS.LIST)
+      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .catch(this.handleError);
+  }
+
+  getBeerDetails(beerId: string): Observable<BeerDetailsResponseWrapper> {
+    // Initialize Params Object
+    let params = new HttpParams()
+      .set('beerId', beerId);
+
+    return this._http.get<BeerDetailsResponseWrapper>(this._config.BACKEND.BEERS.DETAILS, {params})
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }

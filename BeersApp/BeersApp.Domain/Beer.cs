@@ -13,6 +13,17 @@ namespace BeersApp.Domain
         public int AvailableId { get; set; }
         public Available Available { get; set; }
         public Labels Labels { get; set; }
+        public string DisplayImage
+        {
+            get
+            {
+                if(Labels != null)
+                {
+                    return Labels.Large;
+                }
+                return "";
+            }
+        }
         #endregion
     }
 }

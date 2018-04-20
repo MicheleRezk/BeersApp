@@ -10,6 +10,7 @@ export class Beer {
     public abv: number,
     public availableId: number,
     public available: Available,
-    public labels: Labels
+    public labels: Labels,
+    public displayImage: string
   ) { }
 }
