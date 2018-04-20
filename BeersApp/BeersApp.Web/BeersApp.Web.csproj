@@ -26,8 +26,30 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\models\available.model.ts" />
+    <None Remove="ClientApp\src\app\models\beer-details-response-wrapper.model.ts" />
+    <None Remove="ClientApp\src\app\models\beer-list-response-wrapper.model.ts" />
+    <None Remove="ClientApp\src\app\models\beer.model.ts" />
+    <None Remove="ClientApp\src\app\models\labels.model.ts" />
+    <None Remove="ClientApp\src\app\models\response-wrapper.model.ts" />
+    <None Remove="ClientApp\src\app\services\beers.service.ts" />
+    <None Remove="ClientApp\src\app\services\config.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BeersApp.Application\BeersApp.Application.csproj" />
     <ProjectReference Include="..\BeersApp.Domain\BeersApp.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\available.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\beer-details-response-wrapper.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\beer-list-response-wrapper.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\beer.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\labels.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\response-wrapper.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\beers.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\config.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

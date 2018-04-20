@@ -1,0 +1,20 @@
+<div class="beers-container">
+  <div class="item-list">
+    <ul>
+      <li *ngFor='let beer of beers'>
+        <a class="beer-link teaser" [routerLink]="['/beers', beer.id]">
+          <span class="brand-inner">
+            <!--<span class="brand-image">
+              <img [src]='beer.labels.medium'
+                   [title]='beer.nameDisplay'
+                   [style.width.px]='imageWidth'
+                   [style.margin.px]='imageMargin'>
+
+            </span>-->
+            <span class="brand-name">{{beer.nameDisplay}}</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
