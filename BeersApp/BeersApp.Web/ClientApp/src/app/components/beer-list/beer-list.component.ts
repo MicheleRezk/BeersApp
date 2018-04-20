@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+
+//Models
 import { Beer } from '../../models/beer.model';
-import { BeerService } from '../../services/beers.service';
 import { BeerListResponseWrapper } from '../../models/beer-list-response-wrapper.model';
+import { Available } from '../../models/available.model';
+
+//Services
+import { Config } from '../../services/config.service';
+import { BeerService } from '../../services/beers.service';
+
 
 @Component({
   selector: 'beer-list',
@@ -14,15 +21,21 @@ export class BeerListComponent implements OnInit{
 
   // objects:
   beerListResponse: BeerListResponseWrapper;
+  //Defaults
   currentPageNumber: number = 1;
+  currentAvailableId: number = -1;
+  currentAvailableName: string = "All";
+
   errorMessage: string;
   isLoading: boolean;
+  filters: Available[];
 
-  constructor(private _beerService: BeerService) {
+  constructor(private _beerService: BeerService, private _config: Config) {
 
   }
 
   ngOnInit(): void {
+    this.filters = this._config.AVAILABLE_FILTERS;
     this.loadBeers();
   }
 
@@ -30,10 +43,15 @@ export class BeerListComponent implements OnInit{
   goToPage($event): void {
     this.loadBeers();
   }
-
+  //filter by available Id
+  filterByAvailableId(availableId: number) {
+    this.currentAvailableId = availableId;
+    this.currentAvailableName = this.filters.find(f => f.id == this.currentAvailableId.toString()).name;
+    this.loadBeers();
+  }
   loadBeers(): void{
     this.isLoading = true;
-    this._beerService.getBeers(this.currentPageNumber).subscribe(
+    this._beerService.getBeers(this.currentPageNumber, this.currentAvailableId).subscribe(
       response => this.displayBeerList(response),
       error => this.errorMessage = <any>error,
       () => this.isLoading = false

@@ -2,14 +2,29 @@
 <spinner [loading]="isLoading"></spinner>
 
 <div class="row">
-  <h1 class="heading heading--xlarge">Explore our beers</h1>
+  <h1 class="heading heading--xlarge">EXPLORE OUR BEERS</h1>
 </div>
 <div *ngIf='!isLoading && beers'>
   <div class="row beers-paging">
     Page&nbsp;<input type='number' [(ngModel)]='currentPageNumber' (keyup.enter)="goToPage($event)" /> of {{beerListResponse.numberOfPages}} &nbsp; <button type="button" class="btn-success" (click)="goToPage($event)">Load Page</button>
   </div>
 </div>
-<div class="row beers-container" *ngIf='!isLoading && beers'>
+<div *ngIf='!isLoading && beers'>
+  <div class="row beers-filters">
+    <ul class="filters">
+      <li *ngFor="let filter of filters" (click)="filterByAvailableId(filter.id)" [class.active]="filter.id==currentAvailableId">
+      {{filter.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <h1 class="heading heading--med">{{currentAvailableName}} Beers</h1>
+  </div>
+</div>
+<div class="clearfix row">
+  <hr />
+</div>
+<div class="beers-container" *ngIf='!isLoading && beers'>
   <ng-container *ngFor="let beer of beers; let i = index;">
     <div class="beer-item col-md-3 col-sm-12 col-xs-12">
       <a class="beer-link" [routerLink]="['/beers', beer.id]">

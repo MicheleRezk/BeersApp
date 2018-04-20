@@ -37,10 +37,11 @@ namespace BeersApp.Web.Controllers
         // GET: /api/beers/list?page=2
         // GET: /api/beers/list?page=2&order=name
         // GET: /api/beers/list?page=2&order=name&sort=desc
+        // GET: /api/beers/list?page=2&order=name&sort=desc&availableId=1
         [HttpGet("list")]
-        public async Task<ResponseWrapper<List<Beer>>> List([FromQuery] int page =1,[FromQuery] string order = "name", [FromQuery] string sort ="asc")
+        public async Task<ResponseWrapper<List<Beer>>> List([FromQuery] int page =1,[FromQuery] string order = "name", [FromQuery] string sort ="asc", [FromQuery] int availableId = -1)
         {
-            var response = await _BeerServices.GetAll(page, order, sort);
+            var response = await _BeerServices.GetAll(page, order, sort, availableId);
             return response;
         }
         #endregion

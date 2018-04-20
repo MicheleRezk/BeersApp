@@ -31,9 +31,13 @@ namespace BeersApp.Application.Services
         /// <param name="order">Order By</param>
         /// <param name="sort">Sort Direction</param>
         /// <returns></returns>
-        public async Task<ResponseWrapper<List<Beer>>> GetAll(int pageNumber = 1, string order = "name", string sort="asc")
+        public async Task<ResponseWrapper<List<Beer>>> GetAll(int pageNumber = 1, string order = "name", string sort="asc", int availableId = -1)
         {
             var url = $"{BreweryDbClient.BaseAPIAddress}beers?withBreweries=y&p={pageNumber}&order={order}&sort={sort}&key={Client.AppKey}";
+            if(availableId!=-1)//then filter by available Id
+            {
+                url += $"&availableId={availableId}";
+            }
             return await Client.DownloadSerializedJsonDataAsync<ResponseWrapper<List<Beer>>>(url);
         }
         /// <summary>

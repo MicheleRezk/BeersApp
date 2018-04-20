@@ -3,22 +3,25 @@ body {
   font-family: Georgia;
   color: #3a3934;
 }
-.beers-container
-{
-  margin:auto;
-  margin-top:200px;
+
+.beers-container {
+  margin: auto;
+  /*margin-top: 200px;*/
 }
+
 .beer-image {
   /*width:200px;*/
 }
-.beer-item
-{
+
+.beer-item {
   /*margin-top:5px;*/
 }
+
 .beer-info {
   font-weight: bold;
   text-align: center;
 }
+
 .heading {
   font-family: Montserrat,helvetica,sans-serif;
   text-transform: uppercase;
@@ -31,27 +34,95 @@ body {
   text-align: center;
   transition: font-size 250ms,letter-spacing 250ms,line-height 250ms,margin-bottom 250ms;
 }
-
-/*spinner*/
-
-.spinner {
-  /*margin: 0 auto;*/
-  width: 50px;
-  height: 50px;
+.heading--xlarge {
+  font-size: 5.5rem;
+  line-height: 5.1875rem;
+  margin-bottom: 3.44828%;
   text-align: center;
-  font-size: 10px;
 }
+.heading--med {
+  font-size: 3rem;
+  letter-spacing: -.04em;
+  margin-bottom: 1.0101%;
+}
+  /*spinner*/
+  .spinner {
+    /*margin: 0 auto;*/
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 10px;
+  }
+
 .beers-paging {
   font-family: Montserrat,helvetica,sans-serif;
-  text-align:center;
-  font-weight:bold;
-  font-size:22px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
 }
+
   .beers-paging input {
     width: 100px;
     background-color: #4CAF50;
     color: white;
     border: 1px solid #4CAF50;
-    text-align:center;
+    text-align: center;
+  }
+.beers-filters{
+  margin-top:1.6%;
 }
-  
+ul {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+.filters {
+  list-style: none;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  text-align: center;
+  margin-bottom: 1.69492%;
+}
+  .filters li {
+    margin-bottom: .84034%;
+    display: inline-block !important;
+    margin: 1px 2px 1.69492%;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-family: Georgia;
+    background: 0 0;
+    border: 1px solid #a08645;
+    border-radius: 5px;
+    padding: 12px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    vertical-align: bottom;
+    font-size: 14px !important;
+    font-size: .875rem;
+    color: inherit;
+    text-align: center;
+    text-transform: none;
+    box-sizing: border-box;
+  }
+    .filters li.active {
+      cursor: default;
+      background-color: #a08645;
+      color: #fff;
+    }
+  hr
+  {
+    color:#000;
+    font-size:12px;
+    font-weight:bold;
+  }
