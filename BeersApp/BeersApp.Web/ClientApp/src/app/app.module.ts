@@ -13,6 +13,7 @@ import { BeerDetailsComponent } from './components/beer-details/beer-details.com
 //Services
 import { Config } from './services/config.service';
 import { BeerService } from './services/beers.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -21,7 +22,8 @@ import { BeerService } from './services/beers.service';
     AppComponent,
     NavMenuComponent,
     BeerListComponent,
-    BeerDetailsComponent
+    BeerDetailsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

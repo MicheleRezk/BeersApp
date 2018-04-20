@@ -1,5 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-.beer-image
+.beers-container
 {
+  margin:auto;
+}
+.beer-image {
   /*width:200px;*/
 }
+.beer-item
+{
+  /*margin-top:5px;*/
+}
+.beer-info {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/*spinner*/
+
+.spinner {
+  /*margin: 0 auto;*/
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
+}
+
+
+  

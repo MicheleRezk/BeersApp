@@ -16,21 +16,25 @@ export class BeerListComponent implements OnInit{
   beerListResponse: BeerListResponseWrapper;
   currentPageNumber: number = 1;
   errorMessage: string;
-  imageWidth: number = 200;
-  imageMargin: number = 2;
+  isLoading: boolean;
 
   constructor(private _beerService: BeerService) {
 
   }
 
   ngOnInit(): void {
-    this._beerService.getBeers().subscribe(response => {
-      this.beerListResponse = response;
-      if (this.beerListResponse.status == "success") {
-        this.beers = this.beerListResponse.data;
-        this.currentPageNumber = this.beerListResponse.currentPage;
-      }
-    },
-      error => this.errorMessage = <any>error)
+    this.isLoading = true;
+    this._beerService.getBeers().subscribe(
+      response => this.displayBeerList(response),
+      error => this.errorMessage = <any>error,
+        () => this.isLoading = false
+    );
+  }
+  displayBeerList(response: BeerListResponseWrapper): void {
+    this.beerListResponse = response;
+    if (this.beerListResponse.status == "success") {
+      this.beers = this.beerListResponse.data;
+      this.currentPageNumber = this.beerListResponse.currentPage;
+    }
   }
 }
