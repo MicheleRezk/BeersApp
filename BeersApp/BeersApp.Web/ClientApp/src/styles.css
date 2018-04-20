@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Georgia;
+  color: #3a3934;
+}
 .beers-container
 {
   margin:auto;
+  margin-top:200px;
 }
 .beer-image {
   /*width:200px;*/
@@ -14,7 +19,18 @@
   font-weight: bold;
   text-align: center;
 }
-
+.heading {
+  font-family: Montserrat,helvetica,sans-serif;
+  text-transform: uppercase;
+  font-size: 5.5rem;
+  letter-spacing: -.02em;
+  line-height: 5.1875rem;
+  margin-top: 14px;
+  margin-bottom: 3.44828%;
+  word-break: normal;
+  text-align: center;
+  transition: font-size 250ms,letter-spacing 250ms,line-height 250ms,margin-bottom 250ms;
+}
 
 /*spinner*/
 
@@ -25,6 +41,17 @@
   text-align: center;
   font-size: 10px;
 }
-
-
+.beers-paging {
+  font-family: Montserrat,helvetica,sans-serif;
+  text-align:center;
+  font-weight:bold;
+  font-size:22px;
+}
+  .beers-paging input {
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    text-align:center;
+}
   

@@ -23,11 +23,20 @@ export class BeerListComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.loadBeers();
+  }
+
+  //when press enter, or press Go To Page Button
+  goToPage($event): void {
+    this.loadBeers();
+  }
+
+  loadBeers(): void{
     this.isLoading = true;
-    this._beerService.getBeers().subscribe(
+    this._beerService.getBeers(this.currentPageNumber).subscribe(
       response => this.displayBeerList(response),
       error => this.errorMessage = <any>error,
-        () => this.isLoading = false
+      () => this.isLoading = false
     );
   }
   displayBeerList(response: BeerListResponseWrapper): void {

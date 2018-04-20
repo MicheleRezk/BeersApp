@@ -15,8 +15,12 @@ export class BeerService {
 
   constructor(private _http: HttpClient, private _config: Config) { }
 
-  getBeers(): Observable<BeerListResponseWrapper> {
-    return this._http.get<BeerListResponseWrapper>(this._config.BACKEND.BEERS.LIST)
+  getBeers(pageNumber: number): Observable<BeerListResponseWrapper> {
+    // Initialize Params Object
+    let params = new HttpParams()
+      .set('page', pageNumber.toString());
+
+    return this._http.get<BeerListResponseWrapper>(this._config.BACKEND.BEERS.LIST, { params })
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
@@ -26,7 +30,7 @@ export class BeerService {
     let params = new HttpParams()
       .set('beerId', beerId);
 
-    return this._http.get<BeerDetailsResponseWrapper>(this._config.BACKEND.BEERS.DETAILS, {params})
+    return this._http.get<BeerDetailsResponseWrapper>(this._config.BACKEND.BEERS.DETAILS, { params })
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }

@@ -1,6 +1,14 @@
 <!--(spinner)-->
 <spinner [loading]="isLoading"></spinner>
 
+<div class="row">
+  <h1 class="heading heading--xlarge">Explore our beers</h1>
+</div>
+<div *ngIf='!isLoading && beers'>
+  <div class="row beers-paging">
+    Page&nbsp;<input type='number' [(ngModel)]='currentPageNumber' (keyup.enter)="goToPage($event)" /> of {{beerListResponse.numberOfPages}} &nbsp; <button type="button" class="btn-success" (click)="goToPage($event)">Load Page</button>
+  </div>
+</div>
 <div class="row beers-container" *ngIf='!isLoading && beers'>
   <ng-container *ngFor="let beer of beers; let i = index;">
     <div class="beer-item col-md-3 col-sm-12 col-xs-12">
@@ -11,6 +19,7 @@
     </div>
     <div class="clearfix row" *ngIf="(i+1) % 3 == 0"></div>
   </ng-container>
+
 </div>
 
 

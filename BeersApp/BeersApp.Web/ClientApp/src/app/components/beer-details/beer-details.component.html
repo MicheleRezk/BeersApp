@@ -2,16 +2,16 @@
 <spinner [loading]="isLoading" size="lg"></spinner>
 
 <div class="beer-details-container row" *ngIf='!isLoading && beer'>
-  <div class="col-md-2 col-sm-12 col-xs-12">
+  <div class="col-md-4 col-sm-12 col-xs-12">
     <img [alt]="beer.nameDisplay" [src]='beer.displayImage' class="beer-image img-responsive">
   </div>
-  <div class="col-md-6 col-sm-12 col-xs-12">
+  <div class="col-md-5 col-sm-12 col-xs-12">
     <h3>{{beer.nameDisplay}}</h3>
     <div>
       {{beer.description}}
     </div>
     <div><strong>Alcohol by Volume:</strong> {{beer.abv}}%</div>
-    <div *ngIf='beer.available'><strong>Availability:</strong> {{beer.available.name}}%</div>
+    <div *ngIf='beer.available'><strong>Availability:</strong> {{beer.available.name}}</div>
   </div>
 </div>
 
