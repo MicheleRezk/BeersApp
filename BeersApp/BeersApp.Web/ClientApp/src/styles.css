@@ -9,10 +9,11 @@ body {
   /*margin-top: 200px;*/
   /*margin-left:150px;*/
 }
-.beer-row
-{
-  margin-top:5px;
+
+.beer-row {
+  margin-top: 5px;
 }
+
 .beer-image {
   /*width:200px;*/
 }
@@ -38,18 +39,20 @@ body {
   text-align: center;
   transition: font-size 250ms,letter-spacing 250ms,line-height 250ms,margin-bottom 250ms;
 }
+
 .heading--xlarge {
   font-size: 5.5rem;
   line-height: 5.1875rem;
   margin-bottom: 3.44828%;
   text-align: center;
 }
+
 .heading--med {
   font-size: 3rem;
   letter-spacing: -.04em;
   margin-bottom: 1.0101%;
 }
-  /*spinner*/
+/*spinner*/
 .spinner {
   position: relative;
   width: 50px;
@@ -58,6 +61,7 @@ body {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
+
   .spinner:before {
     content: "\f110";
     font-family: FontAwesome;
@@ -71,19 +75,17 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 22px;
-  margin-top:230px;
+  margin-top: 250px !important;
+}
+.autoMargin
+{
+  margin:auto;
 }
 
-  .beers-paging input {
-    width: 100px;
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #4CAF50;
-    text-align: center;
-  }
-.beers-filters{
-  margin-top:1.6%;
+.beers-filters {
+  margin-top: 1.6%;
 }
+
 ul {
   display: block;
   list-style-type: disc;
@@ -93,6 +95,7 @@ ul {
   -webkit-margin-end: 0px;
   -webkit-padding-start: 40px;
 }
+
 .filters {
   list-style: none;
   margin-top: 0;
@@ -106,6 +109,7 @@ ul {
   text-align: center;
   margin-bottom: 1.69492%;
 }
+
   .filters li {
     margin-bottom: .84034%;
     display: inline-block !important;
@@ -128,18 +132,51 @@ ul {
     text-transform: none;
     box-sizing: border-box;
   }
+
     .filters li.active {
       cursor: default;
       background-color: #a08645;
       color: #fff;
     }
-    .orderBy li
-    {
-      cursor:pointer !important;
+
+.orderBy li {
+  cursor: pointer !important;
+}
+
+hr {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+}
+/*search Input*/
+#custom-search-input {
+  padding: 3px;
+  border: solid 1px #E4E4E4;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+  #custom-search-input input {
+    border: 0;
+    box-shadow: none;
+  }
+
+  #custom-search-input button {
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+  }
+
+    #custom-search-input button:hover {
+      border: 0;
+      box-shadow: none;
+      border-left: solid 1px #ccc;
     }
-  hr
-  {
-    color:#000;
-    font-size:12px;
-    font-weight:bold;
+
+  #custom-search-input .glyphicon-search {
+    font-size: 23px;
   }

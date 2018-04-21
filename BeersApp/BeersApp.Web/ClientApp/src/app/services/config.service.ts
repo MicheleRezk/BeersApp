@@ -1,12 +1,17 @@
+/*Client App Configuration Settings*/
+/*Contains Settings like Backend Services Urls*/
+
 import { Injectable, Inject } from '@angular/core';
 import { Available } from '../models/available.model';
 
 @Injectable()
 export class Config {
+  
   public readonly BACKEND: any = {
     BEERS: {
       LIST: "/api/beers/list",
-      DETAILS: "/api/beers/details-by-id"
+      DETAILS: "/api/beers/details-by-id",
+      SEARCH:"/api/beers/search"
     }
   };
   public AVAILABLE_FILTERS: Available[] = [];

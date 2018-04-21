@@ -14,6 +14,7 @@ import { BeerDetailsComponent } from './components/beer-details/beer-details.com
 import { Config } from './services/config.service';
 import { BeerService } from './services/beers.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { BeerSearchComponent } from './components/beer-search/beer-search.component';
 
 
 
@@ -23,6 +24,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     NavMenuComponent,
     BeerListComponent,
     BeerDetailsComponent,
+    BeerSearchComponent,
     SpinnerComponent
   ],
   imports: [
@@ -32,6 +34,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     RouterModule.forRoot([
       { path: '', component: BeerListComponent, pathMatch: 'full' },
       { path: 'beers', component: BeerListComponent, pathMatch: 'full' },
+      { path: 'beers/search', component: BeerSearchComponent, pathMatch: 'full' },
       { path: 'beers/:beerId', component: BeerDetailsComponent }
     ])
   ],

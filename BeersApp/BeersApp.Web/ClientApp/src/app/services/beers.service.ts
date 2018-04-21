@@ -40,6 +40,18 @@ export class BeerService {
       .catch(this.handleError);
   }
 
+  searchForBeers(keyword: string, pageNumber: number): Observable<BeerListResponseWrapper> {
+
+    // Initialize Params Object
+    let params = new HttpParams()
+      .set('page', pageNumber.toString())
+      .set('keyword', keyword);
+      
+    return this._http.get<BeerListResponseWrapper>(this._config.BACKEND.BEERS.SEARCH, { params })
+      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .catch(this.handleError);
+  }
+
   private handleError(err: HttpErrorResponse) {
     console.error(err.message);
     return Observable.throw(err.message);

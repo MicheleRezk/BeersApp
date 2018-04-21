@@ -1,40 +1,30 @@
 <div class="row">
-  <h1 class="heading heading--xlarge">EXPLORE OUR BEERS</h1>
+  <h1 class="heading heading--xlarge">SEARCH FOR BEERS</h1>
 </div>
-<!--Sorting-->
-<div *ngIf='!isLoading && beers'>
-  <div class="row beers-filters">
-    <div class="text-center"><strong>Order By:</strong></div>
-    <ul class="filters orderBy">
-      <li *ngFor="let orderBy of orderByOptions" (click)="changeOrderBy(orderBy)" [class.active]="orderBy==currentOrderBy">
-        {{orderBy}} <i *ngIf="orderBy==currentOrderBy" class="fa" [ngClass]="{ 'fa-sort-asc': (currentSort=='asc'), 'fa-sort-desc': (currentSort=='desc') }"></i>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<!--Filtering-->
-<div *ngIf='!isLoading && beers'>
-  <div class="row beers-filters">
-    <div class="text-center"><strong>Filter By:</strong></div>
-    <ul class="filters">
-      <li *ngFor="let filter of filters" (click)="filterByAvailableId(filter.id)" [class.active]="filter.id==currentAvailableId">
-        {{filter.name}}
-      </li>
-    </ul>
-  </div>
-  <div class="row">
-    <h1 class="heading heading--med">{{currentAvailableName}} Beers</h1>
+<!--Search-->
+<div class="row beer-search">
+  <div class="col-md-6">
+    <!--<h2>Keyword</h2>-->
+    <div id="custom-search-input">
+      <div class="input-group col-md-12">
+        <input type="text" class="form-control input-lg" placeholder="London" [(ngModel)]='keyword' (keyup.enter)="searchBeers()" />
+        <span class="input-group-btn">
+          <button class="btn btn-info btn-lg" type="button" (click)="searchBeers()">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 
 <!--(spinner)-->
 <spinner [loading]="isLoading"></spinner>
 
-<div class="clearfix row">
+<div class="row">
   <hr />
 </div>
-<!--Beers List Container-->
+<!--Beers Search Results Container-->
 <div class="beers-container" *ngIf='!isLoading && beers'>
   <ng-container *ngFor="let beer of beers; let i = index;">
     <div class="beer-item col-md-3 col-sm-12 col-xs-12">
@@ -61,5 +51,4 @@
     </span>
   </div>
 </div>
-
 
