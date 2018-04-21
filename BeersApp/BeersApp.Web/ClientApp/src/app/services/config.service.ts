@@ -10,6 +10,7 @@ export class Config {
     }
   };
   public AVAILABLE_FILTERS: Available[] = [];
+  public ORDER_BY_OPTIONS: string[] = ["name", "abv"];
 
   constructor() {
     //fill available Filters

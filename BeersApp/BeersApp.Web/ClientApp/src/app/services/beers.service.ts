@@ -15,12 +15,15 @@ export class BeerService {
 
   constructor(private _http: HttpClient, private _config: Config) { }
 
-  getBeers(pageNumber: number, availableId: number): Observable<BeerListResponseWrapper> {
+  getBeers(pageNumber: number, availableId: number, order: string, sort: string): Observable<BeerListResponseWrapper> {
     
     // Initialize Params Object
     let params = new HttpParams()
       .set('page', pageNumber.toString())
-      .set('availableId', availableId.toString());
+      .set('availableId', availableId.toString())
+      .set('order', order)
+      .set('sort', sort);
+
 
     return this._http.get<BeerListResponseWrapper>(this._config.BACKEND.BEERS.LIST, { params })
       .do(data => console.log('All: ' + JSON.stringify(data)))

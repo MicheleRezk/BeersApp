@@ -21,14 +21,17 @@ export class BeerListComponent implements OnInit{
 
   // objects:
   beerListResponse: BeerListResponseWrapper;
-  //Defaults
+  //beer list settings
   currentPageNumber: number = 1;
   currentAvailableId: number = -1;
   currentAvailableName: string = "All";
+  currentOrderBy: string = "name";
+  currentSort: string = "asc";
 
   errorMessage: string;
   isLoading: boolean;
   filters: Available[];
+  orderByOptions: string[];
 
   constructor(private _beerService: BeerService, private _config: Config) {
 
@@ -36,6 +39,7 @@ export class BeerListComponent implements OnInit{
 
   ngOnInit(): void {
     this.filters = this._config.AVAILABLE_FILTERS;
+    this.orderByOptions = this._config.ORDER_BY_OPTIONS;
     this.loadBeers();
   }
 
@@ -49,9 +53,21 @@ export class BeerListComponent implements OnInit{
     this.currentAvailableName = this.filters.find(f => f.id == this.currentAvailableId.toString()).name;
     this.loadBeers();
   }
+  //Change order by of listing beers (and reverse sort direction)
+  changeOrderBy(orderBy: string) {
+    this.currentOrderBy = orderBy;
+    if (this.currentSort == "asc") {
+      this.currentSort = "desc";
+    }
+    else {
+      this.currentSort = "asc";
+    }
+    this.loadBeers();
+  }
+  //Beers Listing
   loadBeers(): void{
     this.isLoading = true;
-    this._beerService.getBeers(this.currentPageNumber, this.currentAvailableId).subscribe(
+    this._beerService.getBeers(this.currentPageNumber, this.currentAvailableId, this.currentOrderBy, this.currentSort).subscribe(
       response => this.displayBeerList(response),
       error => this.errorMessage = <any>error,
       () => this.isLoading = false
