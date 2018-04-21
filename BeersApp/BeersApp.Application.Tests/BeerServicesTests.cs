@@ -55,5 +55,23 @@ namespace BeersApp.Application.Tests
             Assert.IsNotNull(beer);
             Assert.AreEqual(beer.Id, beerId);
         }
+
+        [Test()]
+        public async Task Search_Should_Return_Correct_Results()
+        {
+            //Arrange
+            var client = new BreweryDbClient(Config.AppKey);
+            var beerServices = new BeerServices(client);
+            string keyword = "london";
+
+            //Act
+            var response = await beerServices.Search(keyword);
+            var beers = response.Data;
+            //Assert
+            Assert.IsTrue(response.Status == "success");
+            Assert.IsTrue(response.CurrentPage == 1);
+            Assert.IsTrue(response.NumberOfPages >= 1);
+            Assert.IsTrue(beers.Count >= 1);
+        }
     }
 }

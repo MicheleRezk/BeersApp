@@ -40,6 +40,7 @@ namespace BeersApp.Application.Services
             }
             return await Client.DownloadSerializedJsonDataAsync<ResponseWrapper<List<Beer>>>(url);
         }
+
         /// <summary>
         /// Get Beer Details By ID
         /// </summary>
@@ -50,6 +51,19 @@ namespace BeersApp.Application.Services
             var url = $"{BreweryDbClient.BaseAPIAddress}beer/{beerId}?withBreweries=y&key={Client.AppKey}";
             return await Client.DownloadSerializedJsonDataAsync<ResponseWrapper<Beer>>(url);
         }
+
+        /// <summary>
+        /// Search For Beers
+        /// </summary>
+        /// <param name="keyword"></param>
+        /// <param name="pageNumber"></param>
+        /// <returns></returns>
+        public async Task<ResponseWrapper<List<Beer>>> Search(string keyword, int pageNumber = 1)
+        {
+            var url = $"{BreweryDbClient.BaseAPIAddress}search?q={keyword}&type=beer&withBreweries=y&p={pageNumber}&key={Client.AppKey}";
+            return await Client.DownloadSerializedJsonDataAsync<ResponseWrapper<List<Beer>>>(url);
+        }
+
         #endregion
     }
 }

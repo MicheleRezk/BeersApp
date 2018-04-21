@@ -44,6 +44,16 @@ namespace BeersApp.Web.Controllers
             var response = await _BeerServices.GetAll(page, order, sort, availableId);
             return response;
         }
+
+        // GET: /api/beers/search?keyword=london
+        // GET: /api/beers/search?keyword=london&page=2
+        [HttpGet("search")]
+        public async Task<ResponseWrapper<List<Beer>>> Search([FromQuery] string keyword,[FromQuery] int page = 1)
+        {
+            var response = await _BeerServices.Search(keyword, page);
+            return response;
+        }
+
         #endregion
     }
 }
