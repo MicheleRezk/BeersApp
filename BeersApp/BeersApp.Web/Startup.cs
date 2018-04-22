@@ -1,9 +1,7 @@
 using BeersApp.Application;
 using BeersApp.Application.Services;
-using BeersApp.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
@@ -36,11 +34,11 @@ namespace BeersApp.Web
             //services.Configure<BreweryDBSettings>(Configuration.GetSection("BreweryDBSettings"));
             string apiKey = Configuration["BreweryDBSettings:APIKey"];
 
-            services.AddSingleton<BreweryDbClient, BreweryDbClient>(serviceProvider => {
-                return new BreweryDbClient(apiKey); });
+            services.AddSingleton<BreweryDbClient, BreweryDbClient>(serviceProvider =>
+            {
+                return new BreweryDbClient(apiKey);
+            });
             services.AddSingleton<BeerServices, BeerServices>();
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
