@@ -18,4 +18,4 @@ BeersApp is a Single Page Application which integrate with BreweryDb Services to
 ![Beer Search](https://drive.google.com/uc?id=1IsMVx70Z0IWXbgXpC88xOMdFgSz7wrAn)
 
 * **Beer Details**
-![Beer Details](https://drive.google.com/uc?id=1p9sJdgIvjoOTg0VdYVZTkzPT1OEoJxOY)
+![Beer Details](https://drive.google.com/uc?id=1_UydDYEdkdXzPiECxfOIDbqB43UYRUdP)
